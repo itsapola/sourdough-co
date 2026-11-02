@@ -114,16 +114,17 @@
     const turntable = createTurntable(stage, loaf);
     const meter = document.querySelector(".spin-meter");
     const cue = document.querySelector(".scroll-cue");
-    const TURNS = 1; // full rotations while the hero is pinned
+    const TURNS = 1; // full rotations while the hero scrolls out of view
     let target = 0;
     let current = 0;
     let ticking = false;
 
     const measure = () => {
-      const pinLength = Math.max(1, track.offsetHeight - window.innerHeight);
-      // Keep turning past the pin, at the same rate, until the loaf leaves view.
-      target = (window.scrollY / pinLength) * 360 * TURNS;
-      const progress = Math.min(1, Math.max(0, window.scrollY / pinLength));
+      // The page scrolls normally; the loaf turns as it goes, one full turn
+      // by the time the hero has scrolled away.
+      const span = Math.max(1, track.offsetHeight);
+      target = (window.scrollY / span) * 360 * TURNS;
+      const progress = Math.min(1, Math.max(0, window.scrollY / span));
       if (meter) meter.style.setProperty("--progress", Math.max(0.05, progress));
       if (cue) cue.style.opacity = progress > 0.08 ? "0" : "1";
       stage.style.setProperty("--grow", 1 + progress * 0.06);
