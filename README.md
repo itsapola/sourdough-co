@@ -18,6 +18,15 @@ The full brand direction lives in [`brand/brand-board.png`](brand/brand-board.pn
 - **Logo:** `assets/logo.webp` (Crust, for light backgrounds) and `assets/logo-flour.webp` (Flour, for dark backgrounds).
 - **Voice:** Bold. Warm. Neighborly. "Made slowly. Gone quickly." "There's a loaf with your name on it." "From our home to your table."
 
+### Marketing assets
+- **Ad backgrounds** (`brand/ads/`), loaf on Butter with open space for copy:
+  - `ad-background-landscape.png` (1730×909, web banners)
+  - `ad-background-square.png` (1254×1254, feed posts)
+  - `ad-background-story.png` (940×1672, stories and reels)
+- **Instagram grid** (`brand/social/instagram-grid.png`), the planned 3×3 launch grid.
+
+![Instagram grid](brand/social/instagram-grid.png)
+
 ## Pages
 - `index.html`: homepage. The hero loaf turns left-to-right like a 3D model as you scroll. Also has the menu ("Our bakes"), how ordering works, Carly's animated line portrait, and a "Say hello" order form that opens a pre-filled email.
 - `about.html`: "Our kitchen". Meet Carly, plus the animated family line drawing in "Everyone helps".
@@ -29,6 +38,7 @@ The full brand direction lives in [`brand/brand-board.png`](brand/brand-board.pn
 - `assets/carly-lines.webp`, `assets/family-lines.webp`: line drawings (the animated strokes are inline SVG in the pages).
 - `assets/carly.jpg`: Carly's photo on the "Our kitchen" page.
 - `brand/brand-board.png`: brand board.
+- `brand/ads/`, `brand/social/`: ad backgrounds and the Instagram grid.
 
 ## Run it
 Open `index.html` in a browser. No build step. Any static host works (GitHub Pages, Netlify, Vercel).
