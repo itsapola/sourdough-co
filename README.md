@@ -49,8 +49,7 @@ To edit the copy or add posts, change `brand/social/source/make-posts.js` and ru
 - `styles.css`, `script.js`: shared styles and behaviour (scroll turntable, line-drawing animations, reveal animations, order form).
 - `assets/loaf-3d.js`: unwrapped crust texture and loaf profile used by the turntable (embedded so it also works when opened straight from disk).
 - `assets/sourdough-loaf.webp`: still loaf image (no-JS fallback).
-- `assets/carly-lines.webp`, `assets/family-lines.webp`: line drawings (the animated strokes are inline SVG in the pages).
-- `assets/carly.jpg`: Carly's photo on the "Our kitchen" page.
+- `assets/carly-lines.webp`, `assets/family-lines.webp`: line drawings (Carly's appears on both pages, mirrored on "Our kitchen") (the animated strokes are inline SVG in the pages).
 - `brand/brand-board.png`: brand board.
 - `brand/ads/`, `brand/social/`: ad backgrounds and the Instagram grid.
 

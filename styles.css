@@ -281,8 +281,9 @@ form.sent .form-thanks { display: block; }
 
 /* ---------- about page ---------- */
 .about-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 118px); }
-.about-hero .photo { position: relative; overflow: hidden; background: #d9cdb7; }
-.about-hero .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.about-hero .photo { position: relative; overflow: hidden; background: var(--cream); display: flex; align-items: flex-end; justify-content: center; padding: clamp(32px, 5vw, 72px) clamp(24px, 4vw, 64px) 0; }
+.about-hero .carly-portrait { max-width: 500px; }
+.carly-portrait--flip { transform: scaleX(-1); }
 .about-hero .copy { background: var(--yellow); padding: clamp(40px, 6vw, 80px) var(--gutter) clamp(40px, 6vw, 80px) clamp(32px, 5vw, 76px); display: flex; flex-direction: column; justify-content: center; }
 .about-hero h1 { font-size: clamp(42px, 4.4vw, 76px); margin-bottom: 28px; }
 .about-hero .copy p { font-size: clamp(18px, 1.5vw, 22px); max-width: 640px; }
@@ -382,7 +383,8 @@ form.sent .form-thanks { display: block; }
   .teaser .wrap, .hello .wrap, .little-home .wrap { grid-template-columns: 1fr; }
   .carly-portrait { max-width: 340px; }
   .about-hero { grid-template-columns: 1fr; min-height: 0; }
-  .about-hero .photo { aspect-ratio: 1; }
+  .about-hero .photo { padding-top: 32px; }
+  .about-hero .carly-portrait { max-width: 340px; }
   .values-grid { grid-template-columns: 1fr; }
   .family-grid { grid-template-columns: 1fr 1fr; }
   .member:nth-child(3) { padding-left: 0; border-left: 0; }
