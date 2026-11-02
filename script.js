@@ -173,6 +173,27 @@
     revealEls.forEach((el) => el.classList.add("in"));
   }
 
+  /* ---------- About page: family portraits draw themselves in ---------- */
+  const portraits = document.querySelectorAll(".portrait");
+  if (portraits.length) {
+    if ("IntersectionObserver" in window) {
+      const pio = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("drawn");
+              pio.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.35 }
+      );
+      portraits.forEach((el) => pio.observe(el));
+    } else {
+      portraits.forEach((el) => el.classList.add("drawn"));
+    }
+  }
+
   /* ---------- Order / hello form → opens an email to Carly ---------- */
   const form = document.querySelector("#hello-form");
   if (form) {
