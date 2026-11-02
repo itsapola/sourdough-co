@@ -173,8 +173,8 @@
     revealEls.forEach((el) => el.classList.add("in"));
   }
 
-  /* ---------- About page: family line drawing draws itself in ---------- */
-  const portraits = document.querySelectorAll(".family-portrait");
+  /* ---------- Line drawings (Carly on the homepage, the family on About) draw themselves in ---------- */
+  const portraits = document.querySelectorAll(".line-art");
   if (portraits.length) {
     if ("IntersectionObserver" in window) {
       const pio = new IntersectionObserver(
