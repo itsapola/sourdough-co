@@ -27,6 +27,20 @@ The full brand direction lives in [`brand/brand-board.png`](brand/brand-board.pn
 
 ![Instagram grid](brand/social/instagram-grid.png)
 
+### Social posts
+Six ready-to-post images in `brand/social/posts/`, built on the three ad backgrounds:
+
+| File | Size | Copy |
+|---|---|---|
+| `square-made-slowly.png` | 1080×1080 | Made slowly. Gone quickly. |
+| `square-good-things.png` | 1080×1080 | Good things take their time. |
+| `story-loaf-with-your-name.png` | 1080×1920 | There's a loaf with your name on it. |
+| `story-home-to-table.png` | 1080×1920 | From our home to your table. |
+| `landscape-your-neighbor.png` | 1200×630 | Your neighbor makes good bread. |
+| `landscape-made-slowly.png` | 1200×630 | Made slowly. Gone quickly. |
+
+To edit the copy or add posts, change `brand/social/source/make-posts.js` and run `node make-posts.js` from that folder (needs Playwright).
+
 ## Pages
 - `index.html`: homepage. The hero loaf turns left-to-right like a 3D model as you scroll. Also has the menu ("Our bakes"), how ordering works, Carly's animated line portrait, and a "Say hello" order form that opens a pre-filled email.
 - `about.html`: "Our kitchen". Meet Carly, plus the animated family line drawing in "Everyone helps".
