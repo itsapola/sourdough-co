@@ -1,6 +1,6 @@
-# Next Dough Bakehouse
+# Bakehouse Next Dough
 
-Website for Next Dough Bakehouse — slow-made sourdough, handmade by Carly in her home kitchen.
+Website for Bakehouse Next Dough — slow-made sourdough, handmade by Carly in her home kitchen.
 
 ## Pages
 - `index.html` — homepage. The hero loaf turns left-to-right like a 3D model as you scroll; menu ("Our bakes"), how ordering works, and a "Say hello" order form that opens a pre-filled email.
@@ -16,4 +16,4 @@ Website for Next Dough Bakehouse — slow-made sourdough, handmade by Carly in h
 Open `index.html` in a browser. No build step. Any static host works (GitHub Pages, Netlify, Vercel).
 
 ## Before launch
-Replace the placeholder menu items and prices, order/pickup times, and the `hello@nextdoughbakehouse.com` email (also set in `data-email` on the order form).
+Replace the placeholder menu items and prices, order/pickup times, and the `hello@bakehousenextdough.com` email (also set in `data-email` on the order form).
