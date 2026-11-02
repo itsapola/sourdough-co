@@ -318,28 +318,51 @@ form.sent .form-thanks { display: block; }
 .member h3 { font-family: var(--display); font-weight: 900; letter-spacing: -0.03em; font-size: 40px; line-height: 1; margin-bottom: 10px; }
 .member p { margin: 0; font-size: 16px; }
 
-/* Line-drawn portraits that sketch themselves in */
-.portrait {
-  margin: 0 0 22px;
-  aspect-ratio: 4 / 5;
-  max-width: 260px;
-  background: var(--cream);
-  padding: 9% 8% 4%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+/* Family line drawing: strokes draw in top to bottom, then the exact drawing settles in */
+.family-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+  margin-top: 48px;
 }
-.portrait svg { width: 100%; height: 100%; display: block; overflow: visible; stroke-width: 2.7px; }
-.js .portrait path { stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; }
-.js .portrait.drawn path {
-  animation: sketch 0.9s cubic-bezier(.45, .05, .35, 1) both;
-  animation-delay: calc(var(--d, 0ms) + var(--i) * 65ms);
+.family-layout .family-grid { margin-top: 0; grid-template-columns: 1fr 1fr; }
+.family-layout .member:nth-child(3) { padding-left: 0; border-left: 0; }
+.family-layout .member:nth-child(n+3) { border-top: 1px solid rgba(46, 26, 18, .25); }
+.family-portrait {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  max-width: 430px;
+  justify-self: center;
+  aspect-ratio: 941 / 1672;
+  -webkit-mask-image: linear-gradient(to bottom, #000 86%, transparent);
+  mask-image: linear-gradient(to bottom, #000 86%, transparent);
 }
+.family-portrait svg, .family-portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.family-strokes { opacity: 0; }
+.js .family-strokes { opacity: 1; }
+.js .family-strokes path { stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; }
+.js .family-final { opacity: 0; }
+.js .family-portrait.drawn path {
+  animation: sketch 0.8s cubic-bezier(.45, .05, .35, 1) both;
+  animation-delay: calc(var(--t) * 2.6s);
+}
+.js .family-portrait.drawn .family-strokes { animation: fade-out 0.7s ease 3.3s both; }
+.js .family-portrait.drawn .family-final { animation: fade-in 0.7s ease 3.2s both; }
 @keyframes sketch {
   0% { stroke-dashoffset: 1; opacity: 0; }
   2% { opacity: 1; }
   100% { stroke-dashoffset: 0; opacity: 1; }
 }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--crust); color: var(--cream); padding: 64px 0 40px; }
@@ -376,7 +399,8 @@ form.sent .form-thanks { display: block; }
   .values-grid { grid-template-columns: 1fr; }
   .family-grid { grid-template-columns: 1fr 1fr; }
   .member:nth-child(3) { padding-left: 0; border-left: 0; }
-  .portrait { --d: 0ms !important; }
+  .family-layout { grid-template-columns: 1fr; }
+  .family-portrait { max-width: 380px; }
   .site-footer .wrap { grid-template-columns: 1fr 1fr; }
   .site-footer .wrap > :first-child { grid-column: 1 / -1; }
 }
@@ -390,7 +414,8 @@ form.sent .form-thanks { display: block; }
   .row { grid-template-columns: 1fr; }
   .bake { grid-template-columns: 1fr; }
   .bake .price { grid-row: auto; grid-column: 1; }
-  .family-grid { grid-template-columns: 1fr; }
+  .family-grid, .family-layout .family-grid { grid-template-columns: 1fr; }
+  .family-layout .member:nth-child(n+3) { border-top: 0; }
   .member, .member + .member { padding: 22px 0 6px; border-left: 0; border-bottom: 1px solid rgba(46, 26, 18, .25); }
 }
 
@@ -398,7 +423,8 @@ form.sent .form-thanks { display: block; }
   .band-inner { animation: none; }
   .scroll-cue svg { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .js .portrait path { stroke-dashoffset: 0; opacity: 1; animation: none !important; }
+  .js .family-strokes { display: none; }
+  .js .family-final { opacity: 1; animation: none !important; }
 }
 
 /* "Bakehouse" sits above the wordmark: Bakehouse Next Dough */

@@ -173,8 +173,8 @@
     revealEls.forEach((el) => el.classList.add("in"));
   }
 
-  /* ---------- About page: family portraits draw themselves in ---------- */
-  const portraits = document.querySelectorAll(".portrait");
+  /* ---------- About page: family line drawing draws itself in ---------- */
+  const portraits = document.querySelectorAll(".family-portrait");
   if (portraits.length) {
     if ("IntersectionObserver" in window) {
       const pio = new IntersectionObserver(
@@ -186,7 +186,7 @@
             }
           });
         },
-        { threshold: 0.35 }
+        { threshold: 0.25 }
       );
       portraits.forEach((el) => pio.observe(el));
     } else {
