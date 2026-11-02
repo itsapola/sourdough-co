@@ -188,7 +188,7 @@ p { margin: 0 0 1em; }
 /* ---------- home: intro ---------- */
 .section { padding: clamp(72px, 10vw, 140px) 0; }
 .intro { text-align: center; background: var(--cream); }
-.intro h2 { font-family: var(--body); font-weight: 600; font-size: clamp(30px, 3.3vw, 44px); letter-spacing: -0.02em; margin-bottom: 18px; }
+.intro h2 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 20px; text-wrap: balance; }
 .intro p { max-width: 640px; margin: 0 auto; color: var(--crust-soft); font-size: 20px; }
 
 .steps {
@@ -202,7 +202,7 @@ p { margin: 0 0 1em; }
 .step { padding: 28px 28px 8px 0; }
 .step + .step { padding-left: 28px; border-left: 1px solid rgba(57, 43, 35, .2); }
 .step-num { font-family: var(--display); font-weight: 400; font-size: 52px; letter-spacing: -0.01em; line-height: 1; color: var(--blue); }
-.step h3 { font-size: 22px; margin: 14px 0 8px; }
+.step h3 { font-family: var(--display); font-weight: 400; letter-spacing: -0.01em; font-size: 22px; line-height: 1.1; margin: 14px 0 8px; }
 .step p { color: var(--crust-soft); font-size: 17px; }
 
 /* ---------- bakes ---------- */
