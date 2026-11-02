@@ -180,7 +180,7 @@
       e.preventDefault();
       const data = new FormData(form);
       const to = form.dataset.email;
-      const subject = `Good Hours order request from ${data.get("name")}`;
+      const subject = `Next Dough order request from ${data.get("name")}`;
       const body = [
         `Name: ${data.get("name")}`,
         `Email: ${data.get("email")}`,
