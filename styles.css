@@ -427,6 +427,3 @@ form.sent .form-thanks { display: block; }
   .js .line-strokes { display: none; }
   .js .line-final { opacity: 1; animation: none !important; }
 }
-
-/* "Bakehouse" sits above the wordmark: Bakehouse Next Dough */
-.logo-sub--top { margin: 0 0 8px; }
